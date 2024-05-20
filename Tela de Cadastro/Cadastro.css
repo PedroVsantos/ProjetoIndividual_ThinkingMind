@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
+body {
+    margin: 0;
+    font-family: 'Playfair Display';
+}
+
+.main_login {
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(-25deg, #0528ee, #161c4e, #05041f);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.left_login {
+    width: 50vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.left_login > h1 {
+    color: #f8f8f8;
+    margin-left: 70px;
+    font-weight: 900;
+}
+
+.left_image {
+    width: 25vw;
+}
+
+.right_login {
+    width: 45vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.card_login {
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 30px 35px;
+    background-color: rgb(30, 71, 153);
+    border-radius: 20px;
+    box-shadow: 0px 10px 40px rgb(36, 57, 101);
+
+}
+
+.card_login > h1 {
+    color: #f7f6ff;
+    font-weight: 800px;
+    margin: 0;
+}
+
+.textfield {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    margin: 10px 0px;
+}
+
+.textfield > input{
+    width: 100%;
+    border: none;
+    border-radius: 10px;
+    padding: 15px;
+    background: rgb(133, 168, 236);
+    color: white;
+    font-size: 12pt;
+    box-shadow: 0px 10px 40px rgb(36, 57, 101);
+    outline: none;
+    box-sizing: border-box;
+}
+
+.textfield > label {
+    color: white;
+    margin-bottom: 15px;
+}
+
+.btn_cadastro {
+    width: 100%;
+    padding: 16px 0px;
+    margin: 25px;
+    border-radius: 10px;
+    border: none;
+    font-weight: 800;
+    background-color: #3e37f3;
+    box-shadow: 0px 10px 40px -12px rgb(10, 33, 84);
+    cursor: pointer;
+    color: white;
+}
