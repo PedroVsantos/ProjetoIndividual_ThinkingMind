@@ -1,0 +1,227 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+html {
+    scroll-behavior: smooth;
+}
+body {
+    font-family: 'Playfair Display';
+    width: 100vw;
+    height: 100vh;
+
+    overflow-x: hidden;
+}
+
+header {
+    width: 100%;
+    height: 80px;
+    background: linear-gradient(-25deg, #0a27cb, #161c4e, #05041f);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+}
+
+.navbar {
+    display: flex;
+    gap: 20px;
+    margin-right: 20px;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+header>h1 {
+    color: white;
+}
+
+.logo-image {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    margin-left: 20px;
+}
+
+.image-navbar {
+    width: 100px;
+}
+
+section {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: end; 
+}
+
+.sessao-welcome {
+    background: linear-gradient(to left bottom, #0a27cb, #0427ab, #0b248b, #12216c, #161c4e);
+}
+
+.child {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.texto_section1 {
+    width: 45%;
+    height: 35%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: linear-gradient(-25deg, #2a5ef9, #182499, #1711b1);
+    border-radius: 15px;
+    box-shadow: 0px 10px 40px rgb(0, 2, 49);
+}
+
+.image_section1 {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image_astro {
+    width: 50%;
+    border-radius: 120px;
+    margin-left: 100px;
+}
+
+.sessao-beneficios {
+    background-image: linear-gradient(to left top, #ff7903, #e86807, #d25809, #bb4909, #a43a08);
+    display: flex;
+}
+
+.sessao-beneficios .child {
+    justify-content: space-evenly;
+}
+
+.textoLeft_section3,
+.textoMidlle_section3,
+.textoRight_section3 {
+    width: 100%;
+    text-align: center;
+    height: 100%;
+}
+
+.textoLeft_section3 {
+    width: 25%;
+    height: 55%;
+    background-image: linear-gradient(to left top, #f7e417, #f8c500, #f5a600, #ed8800, #e26a13);
+    border-radius: 15px;
+    box-shadow: 0px 10px 40px #542404;
+}
+
+.image-book {
+    width: 110px;
+}
+
+.textoMidlle_section3 {
+    width: 25%;
+    height: 60%;
+    background-image: linear-gradient(to left top, #f7e417, #f8c500, #f5a600, #ed8800, #e26a13);
+    border-radius: 15px;
+    box-shadow: 0px 10px 40px #542404;
+}
+
+.image-think {
+    width: 110px;
+}
+
+.textoRight_section3 {
+    width: 25%;
+    height: 65%;
+    background-image: linear-gradient(to left top, #f7e417, #f8c500, #f5a600, #ed8800, #e26a13);
+    border-radius: 15px;
+    box-shadow: 0px 10px 40px #542404;
+}
+
+.image-reading {
+    width: 110px;
+}
+
+.father {
+    width: 100%;
+    height: calc(100% - 80px);
+}
+
+.titulo-section3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-weight: 800px;
+    font-size: 30px;
+}
+
+.sobreTH {
+    background-image: url('../assets/imgs/image-ceu.jpg');
+}
+
+.texto_section2 {
+    text-align: center;
+    width: 900px;
+    height: 500px;
+    background-color: rgba(253, 246, 237, 0.7);
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 17px;
+    color: rgb(18, 40, 38);
+    box-shadow: 0px 16px 35px #29150f;
+
+}
+
+.sessao-sobreMim {
+    background-image: linear-gradient(to right top, #20259c, #1d2197, #1a1c92, #17188d, #141388, #0e1a8b, #08208d, #02268f, #003597, #04439f, #1350a5, #235dab);
+}
+
+.texto-section4 {
+    border-radius: 20px;
+    text-align: center;
+    width: 45%;
+    height: 65%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-image: linear-gradient(to right top, #1a1c58, #181d6b, #141c7e, #111b91, #0f18a4, #0e16a6, #0e15a7, #0d13a9, #0a149a, #0a158b, #0b157d, #0c146e);
+}
+
+.image-section4 {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image-section4Eu {
+    width: 380px;
+    height: 380px;
+    border-radius: 25px;
+    box-shadow: 0px 10px 40px rgb(0, 2, 49);
+    background-image: url('../assets/imgs/image-eu.jpg');
+    background-size: cover;
+    background-position: 0px;
+    background-repeat: no-repeat;
+}
+
+.footer {
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70px;
+    width: 100%;
+    background-color: #05041f;
+}
