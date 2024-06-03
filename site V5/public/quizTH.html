@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Desafio</title>
+
+    <script src="./js/sessao.js"></script>
+    <link rel="stylesheet" href="./css/quiz.css">
+    <link rel="icon" href="./assets/imgs/logo-Thinking_Mind-removebg-preview.png">
+</head>
+<body>
+    <header>
+        <div class="logo-image">
+            <img class="image-navbar" src="assets/imgs/logo-Thinking_Mind-removebg-preview.png" alt="">
+        </div>
+        <h1>Thinking Mind</h1>
+
+        <div class="navbar">
+            <a href="index.html#Wm">Bem-Vindo</a>
+            <a href="index.html#TH">Sobre</a>
+            <a href="index.html#Bn">Benefícios</a>
+            <a href="index.html#Sm">Sobre mim</a>
+            <a href="dashboard/dashboard.html">Desempenho</a>
+            <!-- <a href="quizTH.html">Quiz desafio</a> -->
+            <!-- <a href="Cadastro.html">Cadastro</a> -->
+            <!-- <a href="">|</a> -->
+            <!-- <a href="Login.html">Login</a> -->
+        </div>
+    </header>
+
+    <div class="cardI" id="cardInicio">
+        <h1>Quiz Thinking Mind</h1>
+        <p> Um desafio divertido sobre Filosofia <br>
+        Leia a frase e acerte a qual filosófo pertence</p>
+        <br><br>
+        <button onclick="iniciar()" class="btn">Iniciar</button>
+    </div>
+
+    <div class="questions" id="pergunta1" style="display: none;">
+        <h2>1. “A vida é um processo constante de morrer.”</h2>
+        <select id="resposta1">
+            <option selected disabled value="#">ESCOLHA</option>
+            <option value="a">Arthur Schopenhauer</option>
+            <option value="b">George Berkley</option>
+            <option value="c">Friedrich Nietzsche</option>
+        </select>
+        <br><br>
+        <button onclick="proximaPergunta1()" class="btn">Próxima</button>
+    </div>
+
+    <div class="questions" id="pergunta2" style="display: none;">
+        <h2>2. “Penso, logo existo”</h2>
+        <select id="resposta2">
+            <option selected disabled value="#">ESCOLHA</option>
+            <option value="a">Sócrates</option>
+            <option value="b">René Descartes</option>
+            <option value="c">Platão</option>
+        </select>
+        <br><br>
+        <button onclick="proximaPergunta2()" class="btn">Próxima</button>
+    </div>
+
+    <div class="questions" id="pergunta3" style="display: none;">
+        <h2>3. “Deus está morto.”</h2>
+        <select id="resposta3">
+            <option selected disabled value="#">ESCOLHA</option>
+            <option value="a">Friedrich Nietzsche</option>
+            <option value="b">Platão</option>
+            <option value="c">Sócrates</option>
+        </select>
+        <br><br>
+        <button onclick="proximaPergunta3()" class="btn">Próxima</button>
+    </div>
+
+    <div class="questions" id="pergunta4" style="display: none;">
+        <h2>4. “Só sei que nada sei”</h2>
+        <select id="resposta4">
+            <option selected disabled value="#">ESCOLHA</option>
+            <option value="a">Sócrates</option>
+            <option value="b">Friedrich Nietzsche</option>
+            <option value="c">René Descartes</option>
+        </select>
+        <br><br>
+        <button onclick="proximaPergunta4()" class="btn">Próxima</button>
+    </div>
+
+    <div class="questions" id="pergunta5" style="display: none;">
+        <h2>5. "O que não provoca minha morte faz com que eu fique mais forte."</h2>
+        <select id="resposta5">
+            <option selected disabled value="#">ESCOLHA</option>
+            <option value="a">Padre Fábio de Melo</option>
+            <option value="b">Friedrich Nietzsche</option>
+            <option value="c">Immanuel Kant</option>
+        </select>
+        <br><br>
+        <button onclick="proximaPergunta5()" class="btn">Próxima</button>
+    </div>
+
+    <div class="questions" id="pergunta6" style="display: none;">
+        <h2>6. "Podemos julgar o coração de um homem pela forma como ele trata os animais."</h2>
+        <select id="resposta6">
+            <option selected disabled value="#">ESCOLHA</option>
+            <option value="a">Immanuel Kant</option>
+            <option value="b">Mahatma Gandhi</option>
+            <option value="c">Platão</option>
+        </select>
+        <br><br>
+        <button onclick="proximaPergunta6()" class="btn">Próxima</button>
+    </div>
+
+    <div class="questions" id="pergunta7" style="display: none;">
+        <h2>7. "Quem comete uma injustiça é sempre mais infeliz que o injustiçado."</h2>
+        <select id="resposta7">
+            <option selected disabled value="#">ESCOLHA</option>
+            <option value="a">René Descartes</option>
+            <option value="b">Friedrich Nietzsche</option>
+            <option value="c">Platão</option>
+        </select>
+        <br><br>
+        <button onclick="proximaPergunta7()" class="btn">Próxima</button>
+    </div>
+
+    <div class="questions" id="pergunta8" style="display: none;">
+        <h2>8. "Acredite em milagres, mas não dependa deles."</h2>
+        <select id="resposta8">
+            <option selected disabled value="#">ESCOLHA</option>
+            <option value="a">Platão</option>
+            <option value="b">Immanuel Kant</option>
+            <option value="c">Lao-Tsé</option>
+        </select>
+        <br><br>
+        <button onclick="proximaPergunta8()" class="btn">Próxima</button>
+    </div>
+
+    <div class="questions" id="pergunta9" style="display: none;">
+        <h2>9. "Uma longa viagem de mil milhas inicia-se com o movimento de um pé."</h2>
+        <select id="resposta9">
+            <option selected disabled value="#">ESCOLHA</option>
+            <option value="a">Helen Keller</option>
+            <option value="b">Lao-Tsé</option>
+            <option value="c">Khalil Gibran</option>
+        </select>
+        <br><br>
+        <button onclick="proximaPergunta9()" class="btn">Próxima</button>
+    </div>
+
+    <div class="questions" id="pergunta10" style="display: none;">
+        <h2>10. "Uma vida sem reflexão não vale a pena ser vivida."</h2>
+        <select id="resposta10">
+            <option selected disabled value="#">ESCOLHA</option>
+            <option value="a">Immanuel Kant</option>
+            <option value="b">Sócrates</option>
+            <option value="c">George Berkley</option>
+        </select>
+        <br><br>
+        <button onclick="verificarRespostas()" class="btn">Finalizar</button>
+    </div>
+
+    <div id="resultado" style="display: none;">
+        <h2>Resultado</h2>
+        <p id="resultadoTexto"></p>
+        <br><br>
+        <button onclick="sair()" class="btn">Sair</button>
+    </div>
+
+    <script>
+        var pontosPorPergunta = 10;
+        var respostasCorretas = ['a', 'b', 'a', 'a', 'b', 'a', 'c', 'b', 'b', 'b'];
+        var respostasUsuario = [];
+        var perguntaAtual = 1;
+        var pontuacaoFinal = 0;
+
+
+        function iniciar() {
+            cardInicio.style.display = 'none';
+            pergunta1.style.display = 'block';
+        }
+
+        function proximaPergunta1() {
+            respostasUsuario[0] = resposta1.value;
+            pergunta1.style.display = 'none';
+            pergunta2.style.display = 'block';
+        }
+
+        function proximaPergunta2() {
+            respostasUsuario[1] = resposta2.value;
+            pergunta2.style.display = 'none';
+            pergunta3.style.display = 'block';
+        }
+
+        function proximaPergunta3() {
+            respostasUsuario[2] = resposta3.value;
+            pergunta3.style.display = 'none';
+            pergunta4.style.display = 'block';
+        }
+
+        function proximaPergunta4() {
+            respostasUsuario[3] = resposta4.value;
+            pergunta4.style.display = 'none';
+            pergunta5.style.display = 'block';
+        }
+
+        function proximaPergunta5() {
+            respostasUsuario[4] = resposta5.value;
+            pergunta5.style.display = 'none';
+            pergunta6.style.display = 'block';
+        }
+
+        function proximaPergunta6() {
+            respostasUsuario[5] = resposta6.value;
+            pergunta6.style.display = 'none';
+            pergunta7.style.display = 'block';
+        }
+
+        function proximaPergunta7() {
+            respostasUsuario[6] = resposta7.value;
+            pergunta7.style.display = 'none';
+            pergunta8.style.display = 'block';
+        }
+
+        function proximaPergunta8() {
+            respostasUsuario[7] = resposta8.value;
+            pergunta8.style.display = 'none';
+            pergunta9.style.display = 'block';
+        }
+
+        function proximaPergunta9() {
+            respostasUsuario[8] = resposta9.value;
+            pergunta9.style.display = 'none';
+            pergunta10.style.display = 'block';
+        }
+
+        function verificarRespostas() {
+            respostasUsuario[9] = resposta10.value;
+            for (var i = 0; i < respostasUsuario.length; i++) {
+                if (respostasUsuario[i] == respostasCorretas[i]) {
+                    pontuacaoFinal += pontosPorPergunta;
+                }
+            }
+            pergunta10.style.display = 'none';
+            resultado.style.display = 'block';
+            resultadoTexto.innerText = "Sua pontuação final é: " + pontuacaoFinal;
+        }
+
+        function sair() {
+            var pontuacaoVar = pontuacaoFinal
+            var idUserVar = sessionStorage.ID_USUARIO
+
+            fetch("/quiz/cadastrarResultado", {
+                method:"POST",
+                headers:{
+                    "Content-Type": "application/json", 
+                }, 
+                body: JSON.stringify ({
+                    pontosServer: pontuacaoVar, 
+                    idUserServer: idUserVar
+                }), 
+            })
+
+            setTimeout(() => {
+                window.location = "dashboard/dashboard.html"
+            }, "1000")
+
+            return false
+        }
+
+    </script>
+</body>
+</html>
