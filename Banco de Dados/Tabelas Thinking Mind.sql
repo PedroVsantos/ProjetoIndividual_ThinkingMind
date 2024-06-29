@@ -7,30 +7,28 @@ create table usuario (
 
 create table quiz (
     id int auto_increment primary key,
-    usuario_id int,
+    usuario_id int, 
     pontuacao int,
     data_hora datetime,
     foreign key (usuario_id) references usuario(id)
 );
 
-create table pontuacoes_quiz (
-    id int auto_increment primary key,
+create table qtdlogins (
+    idlogin int auto_increment primary key, 
     usuario_id int,
-    pontuacao_atual int,
-    tentativa_numero int,
-    data_hora datetime,
+    qtdlogins int,
     foreign key (usuario_id) references usuario(id)
 );
 
 create table form (
-    id int auto_increment primary key,
+    idForm int auto_increment primary key,
     usuario_id int,
     resposta varchar(500),
     foreign key (usuario_id) references usuario(id)
 );
 
 create table conquistas (
-    id int auto_increment primary key,
+    idConquista int auto_increment primary key,
     usuario_id int,
     nome varchar(100),
     descricao varchar(500),
