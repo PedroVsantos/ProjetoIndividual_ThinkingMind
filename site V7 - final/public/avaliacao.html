@@ -3,11 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/avaliacao.css ">
     <title>Avalie</title>
 </head>
 <body>
-    <div class="form">
 
+    <header>
+        <div class="logo-image">
+            <img class="image-navbar" src="assets/imgs/logo-Thinking_Mind-removebg-preview.png" alt="">
+        </div>
+        <h1>Thinking Mind</h1>
+
+        <div class="navbar">
+            <a href="#Wm">Bem-Vindo</a>
+            <a href="#TH">Sobre</a>
+            <a href="#Bn">Benefícios</a>
+            <a href="#Sm">Sobre mim</a>
+            <a href="#avalie">Avalie</a>
+            <!-- <a href="quizTH.html">Quiz desafio</a> -->
+            <a href="Cadastro.html">Cadastro</a>
+            <a href="">|</a>
+            <a href="Login.html">Login</a>
+        </div>
+    </header>
+
+    <div class="main_form">
+        <div class="title">
+            Como está sua experiência no site ?
+        </div>
+        <div class="form">
+            <label for="">
+                <input type="radio" name="feedback" value="nao"> Não gostei
+            </label>
+            <label for="">
+                <input type="radio" name="feedback" value="sim"> Estou gostando
+            </label>
+            <label for="">
+                <input type="radio" name="feedback" value="indiferente"> indiferente
+            </label>
+
+            <button onclick="avaliar()" class="btn_avaliar">ENVIAR</button>
+
+        </div>
     </div>
 </body>
 </html>
