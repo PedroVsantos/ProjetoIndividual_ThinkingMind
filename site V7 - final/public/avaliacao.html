@@ -20,7 +20,6 @@
             <a href="#Bn">Benefícios</a>
             <a href="#Sm">Sobre mim</a>
             <a href="#avalie">Avalie</a>
-            <!-- <a href="quizTH.html">Quiz desafio</a> -->
             <a href="Cadastro.html">Cadastro</a>
             <a href="">|</a>
             <a href="Login.html">Login</a>
@@ -28,10 +27,12 @@
     </header>
 
     <div class="main_form">
-        <div class="title">
-            Como está sua experiência no site ?
-        </div>
-        <div class="form">
+        <!-- div em que uso o display block, no caso essa div é exibida constantemente -->
+        <div class="form" id="form" style="display: block;">
+            <div class="title">
+                Como está sua experiência no site ?
+            </div>
+
             <label for="">
                 <input type="radio" name="feedback" value="nao"> Não gostei
             </label>
@@ -41,10 +42,35 @@
             <label for="">
                 <input type="radio" name="feedback" value="indiferente"> indiferente
             </label>
-
-            <button onclick="avaliar()" class="btn_avaliar">ENVIAR</button>
+            <div class="btnA_container">
+                <button onclick="avaliar()" class="btn_avaliar">ENVIAR</button>
+            </div>
+            
+        </div>
+        <!-- já está outra div fica de forma oculta, aparece somente quando é clicado o botão, dessa forma aciona a função que configurei no script-->
+        <div class="enviado" id="enviado" style="display: none;">
+            <div class="btnV_container">
+                <div class="msg">
+                    ENVIADO COM SUCESSO. <br> <br> OBRIGADO!
+                </div>
+                
+                <button class="btn_voltar" onclick="voltar()">VOLTAR</button>
+            </div>
+            
 
         </div>
+
     </div>
 </body>
 </html>
+<script>
+    // função que ao clicar no botão "ENVIAR" oculta a primeira div deixando como none, e exibe a segunda ficando como Block
+    function avaliar() {
+        form.style.display = "none"
+        enviado.style.display = "block"
+    }
+    // função que leva novamente o usuário para a tela inicial do site
+    function voltar() {
+        window.location = "index.html"
+    }
+</script>

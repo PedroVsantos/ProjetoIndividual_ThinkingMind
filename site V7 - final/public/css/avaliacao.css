@@ -52,10 +52,13 @@ header>h1 {
     justify-content: center;
     flex-direction: column;
     align-items: center;
-    margin-bottom: 30px 35px;
+    /* margin-bottom: 30px 35px; */
     color: white;
     box-shadow: 0px 10px 40px rgb(36, 57, 101);
     border-radius: 10px;
+    box-sizing: border-box;
+    padding: 20px; 
+    text-align: center; 
     margin-top: 10px;
 }
 
@@ -66,16 +69,15 @@ label {
 
 .title {
     margin-bottom: 50px;
-    width: 500px;
-    height: 100px;
-    background-color: red;
+    width: 100%;
+    height: 50px;
     display: flex;
     justify-content: center;
     align-items: center;
     color: white;
     background-image: linear-gradient(to right bottom, #05041f, #00253e, #004156, #005f62, #197c61);
     border-radius: 10px;
-    margin-top: 100px;
+    /* margin-top: 100px; */
 }
 
 .btn_avaliar {
@@ -92,4 +94,65 @@ label {
 
 .btn_avaliar:hover {
     background: linear-gradient(to left bottom, #121422, #036aa5, #0296b4, #04b580, #3bae06);
+}
+
+.enviado {
+    width: 500px;
+    height: 250px;
+    background-image: linear-gradient(to right bottom, #05041f, #00253e, #004156, #005f62, #197c61);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    /* margin-bottom: 30px 35px; */
+    color: white;
+    box-shadow: 0px 10px 40px rgb(36, 57, 101);
+    border-radius: 10px;
+    /* margin-top: 10px; */
+}
+
+.btn_voltar {
+    width: 150px;
+    height: 50px;
+    color: white;
+    border-radius: 10px;
+    border: none;
+    background: linear-gradient(to left bottom, #121422, #00446b, #007e97, #00b781, #60e81f);
+    box-shadow: 0px 10px 40px rgb(36, 57, 101);
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn_voltar:hover {
+    background: linear-gradient(to left bottom, #121422, #036aa5, #0296b4, #04b580, #3bae06);
+}
+
+.btnV_container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+    margin-top: 40px;
+}
+
+.btnA_container {
+    margin-top: 20px;
+}
+
+.msg {
+    margin-bottom: 50px;
+    width: 100%;
+    height: 90px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    background-image: linear-gradient(to right bottom, #05041f, #00253e, #004156, #005f62, #197c61);
+    border-radius: 10px;
 }
