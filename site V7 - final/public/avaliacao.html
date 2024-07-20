@@ -3,74 +3,113 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/avaliacao.css ">
+    <link rel="stylesheet" href="./css/avaliacao.css">
     <title>Avalie</title>
 </head>
 <body>
 
-    <header>
-        <div class="logo-image">
-            <img class="image-navbar" src="assets/imgs/logo-Thinking_Mind-removebg-preview.png" alt="">
-        </div>
-        <h1>Thinking Mind</h1>
-
-        <div class="navbar">
-            <a href="#Wm">Bem-Vindo</a>
-            <a href="#TH">Sobre</a>
-            <a href="#Bn">Benefícios</a>
-            <a href="#Sm">Sobre mim</a>
-            <a href="#avalie">Avalie</a>
-            <a href="Cadastro.html">Cadastro</a>
-            <a href="">|</a>
-            <a href="Login.html">Login</a>
-        </div>
-    </header>
-
-    <div class="main_form">
-        <!-- div em que uso o display block, no caso essa div é exibida constantemente -->
-        <div class="form" id="form" style="display: block;">
-            <div class="title">
-                Como está sua experiência no site ?
-            </div>
-
-            <label for="">
-                <input type="radio" name="feedback" value="nao"> Não gostei
-            </label>
-            <label for="">
-                <input type="radio" name="feedback" value="sim"> Estou gostando
-            </label>
-            <label for="">
-                <input type="radio" name="feedback" value="indiferente"> indiferente
-            </label>
-            <div class="btnA_container">
-                <button onclick="avaliar()" class="btn_avaliar">ENVIAR</button>
-            </div>
-            
-        </div>
-        <!-- já está outra div fica de forma oculta, aparece somente quando é clicado o botão, dessa forma aciona a função que configurei no script-->
-        <div class="enviado" id="enviado" style="display: none;">
-            <div class="btnV_container">
-                <div class="msg">
-                    ENVIADO COM SUCESSO. <br> <br> OBRIGADO!
-                </div>
-                
-                <button class="btn_voltar" onclick="voltar()">VOLTAR</button>
-            </div>
-            
-
-        </div>
-
+<header>
+    <div class="logo-image">
+        <img class="image-navbar" src="assets/imgs/logo-Thinking_Mind-removebg-preview.png" alt="Logo Thinking Mind">
     </div>
-</body>
-</html>
+    <h1>Thinking Mind</h1>
+    <div class="navbar">
+        <a href="#Wm">Bem-Vindo</a>
+        <a href="#TH">Sobre</a>
+        <a href="#Bn">Benefícios</a>
+        <a href="#Sm">Sobre mim</a>
+        <a href="#avalie">Avalie</a>
+        <a href="Cadastro.html">Cadastro</a>
+        <a href="">|</a>
+        <a href="Login.html">Login</a>
+    </div>
+</header>
+
+<div class="main_form">
+    <!-- div em que uso o display block, no caso essa div é exibida constantemente -->
+    <div class="form" id="form" style="display: block;">
+        <div class="title">
+            Como está sua experiência no site?
+        </div>
+        <label>
+            <input type="radio" name="feedback" id="feedback_nao" value="Não gostei"> Não gostei
+        </label>
+        <label>
+            <input type="radio" name="feedback" id="feedback_sim" value="Estou gostando"> Estou gostando
+        </label>
+        <label>
+            <input type="radio" name="feedback" id="feedback_indiferente" value="Indiferente"> Indiferente
+        </label>
+        <div class="btnA_container">
+            <button onclick="avaliar()" class="btn_avaliar">ENVIAR</button>
+        </div>
+    </div>
+
+    <div class="enviado" id="enviado" style="display: none;">
+         <!-- já está outra div fica de forma oculta, aparece somente quando é clicado o botão, dessa forma aciona a função que configurei no script-->
+        <div class="btnV_container">
+            <div class="msg">
+                ENVIADO COM SUCESSO. <br> <br> OBRIGADO!
+            </div>
+            <button class="btn_voltar" onclick="voltar()">VOLTAR</button>
+        </div>
+    </div>
+</div>
+
 <script>
-    // função que ao clicar no botão "ENVIAR" oculta a primeira div deixando como none, e exibe a segunda ficando como Block
     function avaliar() {
-        form.style.display = "none"
-        enviado.style.display = "block"
+        // função que ao clicar no botão "ENVIAR" oculta a primeira div deixando como none, e exibe a segunda ficando como Block
+        var feedback_nao = feedback_nao.value;
+        var feedback_sim = feedback_sim.value;
+        var feedback_indiferente = feedback_indiferente.value;
+        
+        var feedback = ""; // var para armazenar a resposta do usuário
+
+        if (feedback_nao) {
+            feedback = "Não gostei";
+        } else if (feedback_sim) {
+            feedback = "Estou gostando";
+        } else if (feedback_indiferente) {
+            feedback = "Indiferente";
+        }
+
+
+        // - validação para caso não seja selecionada nenhuma opção
+        if (feedback == "") {
+            alert('Por favor, selecione uma opção de feedback.'); 
+            return;
+        }
+
+        const usuario_id = sessionStorage.ID_USUARIO;
+
+        fetch("/feedback/enviarFeedback", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                resposta: feedback,
+                usuario_id: usuario_id
+            }),
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                form.style.display = "none";
+                enviado.style.display = "block";
+            } else {
+                alert('Erro ao enviar feedback.');
+            }
+        })
+        .catch(error => console.error('Erro:', error));
+
+        return false;
     }
+
     // função que leva novamente o usuário para a tela inicial do site
     function voltar() {
-        window.location = "index.html"
+        window.location = "index.html";
     }
 </script>
+</body>
+</html>
