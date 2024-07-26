@@ -50,11 +50,9 @@
 
             </div>
 
-            <!-- <div class="btn-nav-white">
-                <a href="./mural.html">
-                    <h3>Mural de Avisos</h3>
-                </a>
-            </div> -->
+            <div class="btn-nav-white" onclick="avalie()">
+                <h3>Avalie</h3>
+            </div>
 
             <div class="btn-logout" onclick="limparSessao()">
                 <h3>Sair</h3>
@@ -85,6 +83,10 @@
     let proximaAtualizacao;
 
     window.onload = exibirAquariosDoUsuario();
+
+    function avalie() {
+        window.location = "Avaliacao.html"
+    }
 
     function exibirAquariosDoUsuario() {
         var aquarios = JSON.parse(sessionStorage.AQUARIOS);

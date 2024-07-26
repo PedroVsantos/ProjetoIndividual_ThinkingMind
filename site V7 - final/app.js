@@ -26,6 +26,8 @@ var medidasRouter = require("./src/routes/medidas");
 // var empresasRouter = require("./src/routes/empresas");
 
 var quizRouter = require("./src/routes/quiz");
+var feedbackRouter = require("./src/routes/avaliacao");
+
 // var resultadoRouter = require("./src/routes/resultado");
 
 
@@ -39,6 +41,8 @@ app.use(cors());
 app.use("/", indexRouter);
 app.use("/usuarios", usuarioRouter);
 app.use("/quiz", quizRouter);
+app.use("/avaliacao", feedbackRouter);
+
 
 // app.use("/avisos", avisosRouter);
 app.use("/medidas", medidasRouter);

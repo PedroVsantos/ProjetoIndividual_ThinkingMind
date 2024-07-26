@@ -399,6 +399,7 @@ canvas {
   border-radius: 5px;
   text-align: center;
   padding: 2% 5%;
+  cursor: pointer;
 }
 
 .btn-nav-white h3 {

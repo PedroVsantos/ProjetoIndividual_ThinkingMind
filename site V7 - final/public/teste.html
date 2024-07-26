@@ -31,15 +31,12 @@
         <div class="title">
             Como está sua experiência no site?
         </div>
-        <label>
-            <input type="radio" name="feedback" id="feedback_nao" value="Não gostei"> Não gostei
-        </label>
-        <label>
-            <input type="radio" name="feedback" id="feedback_sim" value="Estou gostando"> Estou gostando
-        </label>
-        <label>
-            <input type="radio" name="feedback" id="feedback_indiferente" value="Indiferente"> Indiferente
-        </label>
+        <select id="feedback">
+            <option value="" disabled selected>Selecione uma opção</option>
+            <option value="Não gostei">Não gostei</option>
+            <option value="Estou gostando">Estou gostando</option>
+            <option value="Indiferente">Indiferente</option>
+        </select>
         <div class="btnA_container">
             <button onclick="avaliar()" class="btn_avaliar">ENVIAR</button>
         </div>
@@ -58,29 +55,21 @@
 
 <script>
     function avaliar() {
-        // função que ao clicar no botão "ENVIAR" oculta a primeira div deixando como none, e exibe a segunda ficando como Block
-        var feedback_nao = feedback_nao.value;
-        var feedback_sim = feedback_sim.value;
-        var feedback_indiferente = feedback_indiferente.value;
-        
-        var feedback = ""; // var para armazenar a resposta do usuário
+        // Obtendo o valor selecionado no <select>
+        var feedback = document.getElementById('feedback').value;
 
-        if (feedback_nao) {
-            feedback = "Não gostei";
-        } else if (feedback_sim) {
-            feedback = "Estou gostando";
-        } else if (feedback_indiferente) {
-            feedback = "Indiferente";
-        }
-
-
-        // - validação para caso não seja selecionada nenhuma opção
+        // Validação para caso não seja selecionada nenhuma opção
         if (feedback == "") {
-            alert('Por favor, selecione uma opção de feedback.'); 
+            alert('Selecione uma opção de feedback.'); 
             return;
         }
 
-        const usuario_id = sessionStorage.ID_USUARIO;
+        const usuario_id = sessionStorage.getItem('ID_USUARIO');
+
+        if (!usuario_id) {
+            alert('ID de usuário não encontrado');
+            return;
+        }
 
         fetch("/feedback/enviarFeedback", {
             method: "POST",
