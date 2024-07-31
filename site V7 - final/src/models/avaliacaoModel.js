@@ -12,6 +12,21 @@ function salvarFeedback(resposta, usuario_id) {
     return database.executar(instrucaoSql);
 }
 
+// Função para obter contagens e porcentagens para o gráfico
+function obterDadosGrafico() {
+    const sql = `
+        SELECT
+            resposta,
+            COUNT(*) AS total,
+            (COUNT(*) * 100.0 / (SELECT COUNT(*) FROM form)) AS porcentagem
+        FROM form
+        GROUP BY resposta;
+    `;
+    
+    return database.executar(sql);
+}
+
 module.exports = {
-    salvarFeedback
+    salvarFeedback,
+    obterDadosGrafico
 };

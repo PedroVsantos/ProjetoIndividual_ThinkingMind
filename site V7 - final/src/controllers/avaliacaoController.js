@@ -22,6 +22,20 @@ function enviarFeedback(req, res) {
         });
 }
 
+
+function obterDadosGrafico(req, res) {
+    feedbackModel.obterDadosGrafico()
+        .then(function (dados) {
+            console.log("Dados enviados para o frontend:", dados); // Log dos dados enviados
+            res.json(dados);
+        })
+        .catch(function (erro) {
+            console.log(erro);
+            res.status(500).json({ success: false, error: erro.sqlMessage });
+        });
+}
+
 module.exports = {
-    enviarFeedback
+    enviarFeedback,
+    obterDadosGrafico
 };
