@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <link rel="shortcut icon" href="../assets/imgs/logo-Thinking_Mind-removebg-preview.png" type="image/x-icon">
     <meta charset="UTF-8">
@@ -13,7 +14,8 @@
     <script src="./../js/alerta.js"></script>
 
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
 
     <!-- scripts do Chart.js -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -21,6 +23,7 @@
     <!-- FONT AWESOME -->
     <script src="https://kit.fontawesome.com/9f7414eb10.js" crossorigin="anonymous"></script>
 </head>
+
 <body onload="obterDadosGrafico()">
     <div class="janela">
         <div class="header-left">
@@ -48,33 +51,42 @@
 
     <script>
         document.getElementById('b_usuario').innerText = sessionStorage.NOME_USUARIO;
-    
+
+
         function obterDadosGrafico() { //obtém os dados do gráfico, chamando por uma requisição http, converte a resposta da solicitação em formato json
             fetch('/avaliacao/dadosGrafico')
-                .then(response => response.json())
-                .then(data => {
-                    console.log('Dados recebidos do servidor:', data);
-                    plotarGrafico(data);
+                .then(function (response) {
+                    if (response.ok) {
+                        response.json().then(function (data) {
+                            console.log('Dados recebidos do servidor:', data);
+                            plotarGrafico(data);
+                        });
+                    } else {
+                        console.error('Nenhum dado encontrado ou erro na API');
+                    }
                 })
-                .catch(error => console.error('Erro ao obter dados do gráfico:', error));
+                .catch(function (error) {
+                    console.error('Erro ao obter dados do gráfico:', error);
+                });
         }
-    
+
+
         function plotarGrafico(data) {
             const ctx = document.getElementById('myChartCanvas').getContext('2d');
-    
+
             // Inicializa arrays vazios para labels e valores
             const labels = [];
             const valores = [];
-    
+
             // Preenche com base nos dados
             for (let i = 0; i < data.length; i++) {
                 labels.push(data[i].resposta);
-                valores.push(parseFloat(data[i].porcentagem));
+                valores.push(Number(data[i].porcentagem));
             }
-    
+
             console.log('Labels:', labels); // Verificando se labels estão corretos
             console.log('Valores:', valores); // Verificando se valores estão corretos
-    
+
             const config = {
                 type: 'pie',
                 data: {
@@ -100,7 +112,7 @@
                     plugins: {
                         tooltip: {
                             callbacks: {
-                                label: function(tooltipItem) {
+                                label: function (tooltipItem) {
                                     // Formatar a label do tooltip
                                     const percentage = tooltipItem.raw;
                                     return `${tooltipItem.label}: ${percentage.toFixed(2)}%`;
@@ -108,7 +120,7 @@
                             }
                         },
                         datalabels: {
-                            formatter: function(value) {
+                            formatter: function (value) {
                                 // Formatar as labels dos dados no gráfico
                                 return `${value.toFixed(2)}%`;
                             },
@@ -117,9 +129,10 @@
                     }
                 }
             };
-    
+
             new Chart(ctx, config);
         }
     </script>
 </body>
+
 </html>

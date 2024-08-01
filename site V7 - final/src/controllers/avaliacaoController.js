@@ -23,7 +23,7 @@ function enviarFeedback(req, res) {
 }
 
 
-function obterDadosGrafico(req, res) {
+function obterDadosGrafico(req, res) { // função para chamar basicamente a avaliacaoModel e conseguir extrair os dados do banco de dados
     feedbackModel.obterDadosGrafico()
         .then(function (dados) {
             console.log("Dados enviados para o frontend:", dados); // Log dos dados enviados
