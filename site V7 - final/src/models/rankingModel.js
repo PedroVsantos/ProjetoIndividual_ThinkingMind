@@ -5,11 +5,11 @@ function obterRanking() {
     console.log("ACESSEI O RANKING MODEL");
 
     var instrucaoSql = `
-        SELECT usuario.nome, COUNT(conquistas.idConquista) AS pontos_acumulados
+        SELECT usuario.nome, COUNT(conquistas.idConquista) AS pontos
         FROM usuario
         LEFT JOIN conquistas ON usuario.id = conquistas.usuario_id
         GROUP BY usuario.id
-        ORDER BY pontos_acumulados DESC;
+        ORDER BY pontos DESC;
 
     `;
 
