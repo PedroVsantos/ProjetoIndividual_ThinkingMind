@@ -27,7 +27,7 @@ var medidasRouter = require("./src/routes/medidas");
 
 var quizRouter = require("./src/routes/quiz");
 var feedbackRouter = require("./src/routes/avaliacao");
-
+var rankingRouter = require("./src/routes/ranking");
 // var resultadoRouter = require("./src/routes/resultado");
 
 
@@ -42,7 +42,7 @@ app.use("/", indexRouter);
 app.use("/usuarios", usuarioRouter);
 app.use("/quiz", quizRouter);
 app.use("/avaliacao", feedbackRouter);
-
+app.use('/ranking', rankingRouter);
 
 // app.use("/avisos", avisosRouter);
 app.use("/medidas", medidasRouter);
